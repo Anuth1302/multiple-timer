@@ -13,7 +13,7 @@ export default function TimerChallenge({title, targetTime}){
 
         timer.current = setTimeout(()=>{
             setTimerExpired(true)
-            dialog.current.showModal()
+            dialog.current.showModal();
         },targetTime*1000)
 
         setTimerStarted(true)
@@ -25,7 +25,7 @@ export default function TimerChallenge({title, targetTime}){
     }
 
     return <>
-    {timerExpired && <ResultModal ref={dialog} result='lost' targetTime={targetTime} />}
+    <ResultModal ref={dialog} result='lost' targetTime={targetTime} />
     <section className="challenge">
         <h2>{title}</h2>
         <p className="challenge-time"> 
